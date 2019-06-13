@@ -5,4 +5,4 @@ Aula de Introdução à Prog. Web - Criação de um sistema de Login
 leiaute bootstrap
 
 ## aula02 - 13 de junho de 2019
-formulários e ~~validação~~
+formulários e validação
