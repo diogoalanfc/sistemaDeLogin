@@ -12,7 +12,8 @@
   </head>
   <body class="bg-dark">
       <main class="container mt-4">
-          <!--Alerta-->
+          <!-- Alerta -->
+
           <section class="row">
               <div class="col-lg-4 offset-lg-4" 
                    id="alerta">
@@ -24,6 +25,7 @@
               </div>
           </section>
           
+
           <!-- Formulário de login-->
           <section class="row">
               <div class ="col-lg-4 offset-lg-4 bg-light rounded"id="caixaLogin">
@@ -52,16 +54,19 @@
                                   Esqueci a senha.
                               </a>
                           </div>
-                          
-                      </div>
-                      
+           
                       <div class="form-group">
-                          <input type="submit" name="btnEntrar" id="btnEntrar" value=":: Entrar ::" class="btn btn-primary btn-block">
+                          <input type="submit" name="btnEntrar"
+                                 id="btnEntrar" 
+                                 value=":: Entrar ::"
+                                 class="btn btn-primary btn-block">
+
                       </div>
                       
                       <div class="form-group">
                           <p>
                               Novo usuário?
+
                               <a href="#" id="btnRegistrar"> 
                               registrar-se aqui.
                               </a>
@@ -74,6 +79,7 @@
               
               
           </section>
+
       </main>
       
     
