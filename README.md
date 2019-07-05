@@ -7,3 +7,10 @@ leiaute bootstrap
 ## aula02 - 13 de junho de 2019
 formulários e ~~validação~~
 
+## aula 03 - 27 de junho de 2019
+Mostrar e esconder formulários.
+
+## aula 04 - 04 de julho de 2019
+Validação com jQuery e envio de 
+dados com Ajax. ~~Recepção com PHP ~~
+
