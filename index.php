@@ -112,14 +112,14 @@
                         </div>
                         <!--Campo senha-->
                         <div class="form-group">
-                            <input type="password" id="senhaUsuario" class="form-control"
+                            <input type="password" id="senhaUsuario" name="senhaUsuario" class="form-control"
                                    placeholder="Senha" required minlength="6">
 
                         </div>
 
                         <!--Campo de confirmação de senha-->
                         <div class="form-group">
-                            <input type="password" id="senhaUsuarioConfirmar" class="form-control"
+                            <input type="password" id="senhaUsuarioConfirmar"name="senhaUsuarioConfirmar" class="form-control"
                                    placeholder="Confirmar a senha" required minlength="6">
 
                         </div>

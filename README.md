@@ -14,3 +14,6 @@ Mostrar e esconder formulários.
 Validação com jQuery e envio de 
 dados com Ajax. ~~Recepção com PHP ~~
 
+## aula05 - 08 de julho de 2019
+Cadastro de usuário no banco de dados 
+
