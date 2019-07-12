@@ -1,5 +1,7 @@
 <?php // início de um script PHP.
-//
+ session_start();//Inicialização da sessão
+ //Memória de Login entre todas as páginas
+ 
 //Importando as configurações do banco de dados
 require_once 'configDB.php';
 
@@ -10,9 +12,43 @@ function verificar_entrada($entrada){
     $saída = stripcslashes($saída);//Remove barras
     return$saída;
 }
-
-if(isset($_POST['action'])&& $_POST['action'] == 'registro'){
+if(isset($_POST['action'])&& $_POST['action'] == 'entrar'){
+    //echo "Entrou!";
+     $nomeUsuário = verificar_entrada($_POST['nomeUsuario']);
+     $senhaUsuário = verificar_entrada($_POST['senhaUsuario']);
+     $senha = sha1($senhaUsuário);
+     
+     $sql = $conexão->prepare("select * from usuario where nomeUsuario=? and senha=?");
+     $sql->bind_param("ss",$nomeUsuário,$senha);
+     $sql->execute();
+     
+     $busca = $sql->fetch();
+     if($busca != null){
+         //Usuário e senha estão corretos
+         $_SESSION['nomeUsuario'] = $nomeUsuário;
+         echo 'ok';
+         
+         if(!empty($_POST['checkLembrar'])){
+             setcookie("nomeUsuario",$nomeUsuário,time()+(365*24*60*60));//1 ano de vida em segundos
+             setcookie("senhaUsuario",$senha,time()+(365*24*60*60));//1 ano de vida em segundos
+            
+         }else{
+             //Limpa o cookie
+             if(isset($_COOKIE['nomeUsuario'])){
+                 setcookie('nomeUsuario','');           
+             }
+            if(isset($_COOKIE['senhaUsuario'])){
+                     setcookie('senhaUsuario','');
+            }
+         }
+         }else{
+                     echo 'Falhou o login, Usuario ou senha inválidos';
+                 
+     } 
+} 
+elseif(isset($_POST['action'])&& $_POST['action'] == 'registro'){
     
+    //Sanitização de entradas POST
     $nomeCompleto = verificar_entrada($_POST['nomeCompleto']);
     $nomeUsuário = verificar_entrada($_POST['nomeUsuario']);
     $emailUsuário = verificar_entrada($_POST['emailUsuario']);
